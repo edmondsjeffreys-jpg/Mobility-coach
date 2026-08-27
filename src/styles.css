@@ -1,0 +1,494 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #172033;
+  background: #f5f7f8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f5f7f8;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 18px 14px 80px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+h1 {
+  margin: 2px 0 12px;
+  font-size: 29px;
+  line-height: 1.05;
+}
+
+h2 {
+  margin: 10px 0 8px;
+}
+
+h3 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 5px;
+  color: #697386;
+}
+
+p {
+  line-height: 1.5;
+}
+
+.kicker {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: #768193;
+}
+
+/* AI coach button */
+
+.coachBtn {
+  min-height: 44px;
+  border-radius: 12px;
+  border: 0;
+  background: #172033;
+  color: white;
+  font-weight: 800;
+  padding: 0 14px;
+}
+
+/* Routine tabs */
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 2px 0 8px;
+  margin: 12px 0 6px;
+  scrollbar-width: none;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tabs button {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 0 15px;
+  border-radius: 12px;
+  border: 1px solid #d5dbe2;
+  background: white;
+  color: #172033;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.tabs button.active {
+  background: #dfeee5;
+  border-color: #6e9f7d;
+}
+
+/* Exercise progress bar */
+
+.progress {
+  height: 7px;
+  background: #e4e8ec;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 6px 0 14px;
+}
+
+.progress div {
+  height: 100%;
+  background: #6e9f7d;
+  transition: width 0.2s ease;
+}
+
+/* Main exercise card */
+
+.card {
+  background: white;
+  border: 1px solid #dfe4e9;
+  border-radius: 22px;
+  padding: 18px;
+}
+
+.topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.topline b {
+  color: #172033;
+}
+
+/* Exercise image */
+
+.exerciseImageWrap {
+  position: relative;
+  margin: 16px 0 8px;
+}
+
+.exerciseImage {
+  display: block;
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  background: #f4f7f5;
+  border: 1px solid #e1e7e3;
+  border-radius: 18px;
+  padding: 8px;
+}
+
+.figure {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 14px auto 6px;
+  background: #edf4ef;
+  border: 2px solid #6e9f7d;
+  font-size: 27px;
+  font-weight: 900;
+}
+
+/* Tags */
+
+.tagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 8px 0 14px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: #f0f3f5;
+  color: #5d6673;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.coreTag {
+  background: #e5f2e8;
+  color: #47705a;
+}
+
+/* Information panels */
+
+.info,
+.breath {
+  padding: 14px;
+  border-radius: 14px;
+  margin: 12px 0;
+  background: #f6f8f9;
+}
+
+.breath {
+  background: #edf5f0;
+  border: 1px solid #d6e6db;
+}
+
+.info p,
+.breath p {
+  margin: 0;
+}
+
+.doseBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background: #172033;
+  color: white;
+  border-radius: 14px;
+  padding: 13px 14px;
+  margin: 12px 0 16px;
+}
+
+.doseBox strong {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.7;
+}
+
+.doseBox span {
+  font-weight: 850;
+}
+
+/* Forms */
+
+label {
+  display: block;
+  font-weight: 800;
+  font-size: 13px;
+  margin: 14px 0 6px;
+}
+
+input,
+textarea {
+  width: 100%;
+  font-size: 16px;
+  color: #172033;
+  background: white;
+  border: 1px solid #cfd6dd;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+input:focus,
+textarea:focus,
+button:focus {
+  outline: 3px solid rgba(110, 159, 125, 0.22);
+  outline-offset: 2px;
+}
+
+textarea {
+  min-height: 78px;
+  resize: vertical;
+}
+
+/* Difficulty rating */
+
+.feel {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.feel button {
+  min-height: 46px;
+  border-radius: 12px;
+  border: 1px solid #d5dbe2;
+  background: white;
+  color: #172033;
+  font-weight: 800;
+}
+
+.feel button.sel {
+  background: #6e9f7d;
+  color: white;
+  border-color: #6e9f7d;
+}
+
+/* Pain flag */
+
+.painRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 10px 12px;
+  margin: 14px 0 6px;
+  border: 1px solid #e1d7d7;
+  border-radius: 12px;
+  background: #fbf6f6;
+}
+
+.painRow input {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+.painRow span {
+  font-size: 14px;
+}
+
+/* Skip and quick routine */
+
+.secondaryActions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.secondaryActions button {
+  min-height: 42px;
+  border-radius: 12px;
+  border: 1px solid #d5dbe2;
+  background: white;
+  color: #596473;
+  font-weight: 800;
+  padding: 0 14px;
+}
+
+.quickBadge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  border-radius: 999px;
+  padding: 4px 10px;
+  background: #edf5f0;
+  color: #47705a;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* Main navigation buttons */
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.actions button {
+  flex: 1;
+  min-height: 50px;
+  border-radius: 14px;
+  border: 1px solid #d5dbe2;
+  background: white;
+  color: #172033;
+  font-weight: 850;
+}
+
+.actions button:disabled {
+  opacity: 0.4;
+}
+
+.primary {
+  background: #172033 !important;
+  color: white !important;
+  border: 0 !important;
+}
+
+/* Stats */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.stats div {
+  background: white;
+  border: 1px solid #dfe4e9;
+  border-radius: 14px;
+  padding: 13px 8px;
+  text-align: center;
+}
+
+.stats b {
+  display: block;
+  font-size: 22px;
+}
+
+.stats span {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #7a8492;
+  font-weight: 800;
+}
+
+/* AI Coach modal */
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.53);
+  padding: 18px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.modal {
+  width: min(720px, 100%);
+  background: white;
+  border-radius: 22px;
+  padding: 18px;
+  max-height: 86vh;
+  overflow-y: auto;
+}
+
+.modalHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.modalHead button {
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 12px;
+  border: 0;
+  background: #f0f3f5;
+  color: #172033;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.muted {
+  color: #667085;
+  line-height: 1.45;
+}
+
+.modal form button {
+  width: 100%;
+  min-height: 48px;
+  border-radius: 12px;
+  font-weight: 800;
+  margin-top: 10px;
+}
+
+.reply {
+  white-space: pre-wrap;
+  background: #f2f5f7;
+  border-radius: 14px;
+  padding: 14px;
+  margin-top: 14px;
+  line-height: 1.5;
+}
+
+/* Larger screens */
+
+@media (min-width: 620px) {
+  .feel {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .tabs {
+    overflow-x: visible;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
