@@ -1,0 +1,524 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #172033;
+  background: #f5f7f8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f5f7f8;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 12px 12px 60px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+h1 {
+  margin: 1px 0 6px;
+  font-size: 25px;
+  line-height: 1.05;
+}
+
+h2 {
+  margin: 8px 0;
+}
+
+h3 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 4px;
+  color: #697386;
+}
+
+.kicker {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: #768193;
+}
+
+/* AI Coach */
+
+.coachBtn {
+  min-height: 40px;
+  border-radius: 11px;
+  border: 0;
+  background: #172033;
+  color: white;
+  font-weight: 800;
+  padding: 0 13px;
+}
+
+/* Routine tabs */
+
+.tabs {
+  display: flex;
+  gap: 7px;
+  overflow-x: auto;
+  padding: 2px 0 6px;
+  margin: 8px 0 4px;
+  scrollbar-width: none;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tabs button {
+  flex: 0 0 auto;
+  min-height: 39px;
+  padding: 0 13px;
+  border-radius: 11px;
+  border: 1px solid #d5dbe2;
+  background: white;
+  color: #172033;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.tabs button.active {
+  background: #dfeee5;
+  border-color: #6e9f7d;
+}
+
+/* Exercise navigator */
+
+.compactTop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0;
+}
+
+.compactTop select {
+  min-width: 0;
+  flex: 1;
+  background: white;
+  border: 1px solid #d5dbe2;
+  border-radius: 10px;
+  padding: 9px 10px;
+  font-size: 15px;
+  color: #172033;
+}
+
+.compactTop span {
+  font-size: 12px;
+  font-weight: 800;
+  color: #687282;
+}
+
+/* Progress */
+
+.progress {
+  height: 5px;
+  background: #e4e8ec;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 5px 0 9px;
+}
+
+.progress div {
+  height: 100%;
+  background: #6e9f7d;
+  transition: width 0.2s ease;
+}
+
+/* Exercise card */
+
+.card {
+  background: white;
+  border: 1px solid #dfe4e9;
+  border-radius: 18px;
+  padding: 14px;
+}
+
+.topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.topline strong {
+  font-size: 18px;
+  line-height: 1.15;
+}
+
+.topline b {
+  white-space: nowrap;
+  color: #47705a;
+}
+
+/* Exercise image */
+
+.exerciseImageWrap {
+  margin: 9px 0 5px;
+}
+
+.exerciseImage {
+  display: block;
+  width: 100%;
+  max-height: 190px;
+  object-fit: contain;
+  background: #f4f7f5;
+  border: 1px solid #e1e7e3;
+  border-radius: 14px;
+  padding: 5px;
+}
+
+.figure {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 8px auto 4px;
+  background: #edf4ef;
+  border: 2px solid #6e9f7d;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+/* Breathing */
+
+.breath {
+  padding: 10px 11px;
+  border-radius: 12px;
+  background: #edf5f0;
+  border: 1px solid #d6e6db;
+}
+
+.breath p {
+  margin: 0;
+  line-height: 1.35;
+  font-size: 14px;
+}
+
+/* Main quick actions */
+
+.quickActions {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 7px;
+  margin-top: 10px;
+}
+
+.quickActions button,
+.actions button,
+.utilityRow button,
+.detailsBtn,
+.manualSave {
+  min-height: 44px;
+  border-radius: 11px;
+  border: 1px solid #d5dbe2;
+  background: white;
+  color: #172033;
+  font-weight: 800;
+}
+
+.primary {
+  background: #172033 !important;
+  color: white !important;
+  border: 0 !important;
+}
+
+.doneBtn {
+  font-size: 15px;
+}
+
+/* Feel rating */
+
+label {
+  display: block;
+  font-weight: 800;
+  font-size: 12px;
+  margin: 10px 0 5px;
+}
+
+.feel {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.feel button {
+  min-height: 40px;
+  border-radius: 10px;
+  border: 1px solid #d5dbe2;
+  background: white;
+  color: #172033;
+  font-weight: 750;
+  font-size: 12px;
+  padding: 3px;
+}
+
+.feel button.sel {
+  background: #6e9f7d;
+  color: white;
+  border-color: #6e9f7d;
+}
+
+/* Collapsible details */
+
+.detailsBtn {
+  width: 100%;
+  margin-top: 10px;
+  background: #f7f9fa;
+}
+
+.details {
+  margin-top: 8px;
+  border-top: 1px solid #e6eaee;
+  padding-top: 7px;
+}
+
+.info {
+  padding: 10px;
+  border-radius: 11px;
+  background: #f6f8f9;
+}
+
+.info p {
+  margin: 0;
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+/* Exercise tags */
+
+.tagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 7px 0;
+}
+
+.tag {
+  padding: 3px 7px;
+  border-radius: 999px;
+  background: #f0f3f5;
+  color: #5d6673;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.coreTag {
+  background: #e5f2e8;
+  color: #47705a;
+}
+
+/* Inputs */
+
+input,
+textarea {
+  width: 100%;
+  font-size: 16px;
+  color: #172033;
+  background: white;
+  border: 1px solid #cfd6dd;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+textarea {
+  min-height: 65px;
+  resize: vertical;
+}
+
+.manualSave {
+  width: 100%;
+  margin-top: 7px;
+}
+
+/* Pain flag */
+
+.painRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 8px 10px;
+  border: 1px solid #e1d7d7;
+  border-radius: 10px;
+  background: #fbf6f6;
+}
+
+.painRow input {
+  width: 19px;
+  height: 19px;
+  margin: 0;
+}
+
+/* Back / next */
+
+.actions {
+  display: flex;
+  gap: 7px;
+  margin-top: 10px;
+}
+
+.actions button {
+  flex: 1;
+}
+
+.actions button:disabled,
+.utilityRow button:disabled {
+  opacity: 0.4;
+}
+
+/* Undo + history */
+
+.utilityRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+  margin-top: 8px;
+}
+
+.statusNote {
+  text-align: center;
+  color: #47705a;
+  font-weight: 800;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+/* Modals */
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.53);
+  padding: 14px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.modal {
+  width: min(720px, 100%);
+  background: white;
+  border-radius: 20px;
+  padding: 16px;
+  max-height: 86vh;
+  overflow-y: auto;
+}
+
+.modal.small {
+  max-width: 460px;
+}
+
+.modalHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.modalHead button {
+  min-width: 42px;
+  min-height: 42px;
+  border-radius: 10px;
+  border: 0;
+  background: #f0f3f5;
+  font-size: 24px;
+}
+
+.muted {
+  color: #667085;
+  line-height: 1.4;
+}
+
+.modal form button {
+  width: 100%;
+  min-height: 46px;
+  border-radius: 11px;
+  font-weight: 800;
+  margin-top: 8px;
+}
+
+.reply {
+  white-space: pre-wrap;
+  background: #f2f5f7;
+  border-radius: 12px;
+  padding: 12px;
+  margin-top: 12px;
+  line-height: 1.45;
+}
+
+/* History */
+
+.historyList {
+  display: grid;
+  gap: 7px;
+}
+
+.historyItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid #e2e6ea;
+  border-radius: 11px;
+}
+
+.historyItem strong {
+  display: block;
+  font-size: 13px;
+}
+
+.historyItem span {
+  display: block;
+  color: #747e8b;
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.historyItem button {
+  min-height: 38px;
+  border-radius: 9px;
+  border: 1px solid #e1caca;
+  background: white;
+  color: #8a4545;
+  font-weight: 800;
+  padding: 0 10px;
+}
+
+/* Larger screens */
+
+@media (min-width: 620px) {
+  .tabs {
+    overflow-x: visible;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
