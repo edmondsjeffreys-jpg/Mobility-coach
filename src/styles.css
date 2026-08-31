@@ -1,0 +1,732 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+
+  --bg: #f2f4f7;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #7b8794;
+  --accent: #4a5d7a;
+  --accent-soft: #e9eef4;
+  --accent-mid: #8a9aab;
+  --border: #dce2e8;
+  --panel: #f2f5f8;
+
+  color: var(--text);
+  background: var(--bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================================
+   ROUTINE COLOUR PERSONALITIES
+   Same family. Very subtle differences.
+   ========================================================= */
+
+/* MORNING */
+.app:has(.tabs button:nth-child(1).active) {
+  --bg: #f4f6f8;
+  --accent: #617b96;
+  --accent-soft: #eaf0f5;
+  --accent-mid: #93a6b7;
+  --panel: #f0f4f7;
+}
+
+/* NIGHT */
+.app:has(.tabs button:nth-child(2).active) {
+  --bg: #f2f4f7;
+  --accent: #4a5d7a;
+  --accent-soft: #e8edf3;
+  --accent-mid: #8996a7;
+  --panel: #edf1f5;
+}
+
+/* OFFICE */
+.app:has(.tabs button:nth-child(3).active) {
+  --bg: #f4f5f6;
+  --accent: #64717e;
+  --accent-soft: #eceff1;
+  --accent-mid: #929ba4;
+  --panel: #f0f2f3;
+}
+
+/* PRE-GOLF */
+.app:has(.tabs button:nth-child(4).active) {
+  --bg: #f3f6f6;
+  --accent: #516f73;
+  --accent-soft: #e8eeee;
+  --accent-mid: #8ca0a1;
+  --panel: #edf2f2;
+}
+
+/* PRE-SNOW */
+.app:has(.tabs button:nth-child(5).active) {
+  --bg: #f2f6f8;
+  --accent: #55748c;
+  --accent-soft: #e7eff4;
+  --accent-mid: #8fa5b4;
+  --panel: #edf3f6;
+}
+
+/* =========================================================
+   MAIN APP
+   ========================================================= */
+
+.app {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 9px 11px 20px;
+  background: var(--bg);
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 3px;
+}
+
+h1 {
+  margin: 1px 0 0;
+  font-size: 23px;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: var(--text);
+}
+
+h2 {
+  margin: 5px 0;
+  color: var(--text);
+}
+
+h3 {
+  margin: 0 0 3px;
+  font-size: 10px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+}
+
+.kicker {
+  font-size: 9px;
+  line-height: 1.1;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.105em;
+  color: var(--accent);
+}
+
+/* AI coach */
+
+.coachBtn {
+  min-height: 36px;
+  padding: 0 11px;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   ROUTINE TABS
+   ========================================================= */
+
+.tabs {
+  display: flex;
+  gap: 3px;
+  width: 100%;
+  margin: 7px 0 6px;
+  padding: 3px;
+  overflow: visible;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.tabs button {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 33px;
+  padding: 0 3px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #556170;
+  font-size: 10px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.tabs button.active {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* =========================================================
+   EXERCISE NAVIGATION
+   ========================================================= */
+
+.compactTop {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0 0 4px;
+}
+
+.compactTop select {
+  min-width: 0;
+  flex: 1;
+  height: 38px;
+  padding: 0 9px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  outline: none;
+  background: var(--card);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.compactTop select:focus {
+  border-color: var(--accent);
+}
+
+.compactTop span {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.progress {
+  height: 4px;
+  margin: 0 1px 6px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e1e6eb;
+}
+
+.progress div {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent);
+  transition: width 0.2s ease;
+}
+
+/* =========================================================
+   ACTIVE EXERCISE CARD
+   ========================================================= */
+
+.card {
+  padding: 11px;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  background: var(--card);
+}
+
+.topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: 0;
+}
+
+.topline strong {
+  min-width: 0;
+  font-size: 16px;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+.topline b {
+  flex: 0 0 auto;
+  color: var(--accent);
+  font-size: 12px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   DIAGRAM AREA
+   Kept deliberately compact for one-screen use.
+   ========================================================= */
+
+.exerciseImageWrap {
+  position: relative;
+  margin: 7px 0;
+  min-height: 70px;
+}
+
+.exerciseImage {
+  display: block;
+  width: 100%;
+  height: 118px;
+  object-fit: contain;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: var(--panel);
+}
+
+/*
+ Until actual diagrams are installed this number acts as
+ the compact placeholder.
+*/
+
+.figure {
+  width: 42px;
+  height: 42px;
+  margin: 4px auto 0;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--accent-mid);
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 18px;
+  font-weight: 900;
+}
+
+/* =========================================================
+   BREATHING
+   ========================================================= */
+
+.breath {
+  padding: 7px 9px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--panel);
+}
+
+.breath p {
+  margin: 0;
+  color: #465363;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+/* =========================================================
+   DONE / SKIP
+   ========================================================= */
+
+.quickActions {
+  display: grid;
+  grid-template-columns: minmax(0, 2.25fr) minmax(72px, 0.75fr);
+  gap: 6px;
+  margin-top: 7px;
+}
+
+.quickActions button,
+.actions button,
+.utilityRow button,
+.detailsBtn,
+.manualSave {
+  min-height: 39px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #ffffff;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.primary {
+  border-color: var(--accent) !important;
+  background: var(--accent) !important;
+  color: #ffffff !important;
+}
+
+.doneBtn {
+  font-size: 13px;
+  letter-spacing: -0.005em;
+}
+
+/* =========================================================
+   FEEL
+   ========================================================= */
+
+label {
+  display: block;
+  margin: 7px 0 4px;
+  color: #4e5966;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.feel {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.feel button {
+  min-width: 0;
+  min-height: 35px;
+  padding: 2px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: #ffffff;
+  color: #596675;
+  font-size: 10px;
+  line-height: 1.05;
+  font-weight: 750;
+}
+
+.feel button.sel {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* =========================================================
+   MORE DETAILS
+   ========================================================= */
+
+.detailsBtn {
+  width: 100%;
+  min-height: 35px;
+  margin-top: 7px;
+  background: var(--panel);
+  color: #52606e;
+}
+
+.details {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--border);
+}
+
+.info {
+  padding: 8px;
+  border-radius: 9px;
+  background: var(--panel);
+}
+
+.info p {
+  margin: 0;
+  color: #465363;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+/* Tags */
+
+.tagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 6px 0;
+}
+
+.tag {
+  padding: 3px 6px;
+  border-radius: 999px;
+  background: #eef1f4;
+  color: #667382;
+  font-size: 9px;
+  font-weight: 750;
+}
+
+.coreTag {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* Inputs */
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  outline: none;
+  background: #ffffff;
+  color: var(--text);
+  font-size: 16px;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent);
+}
+
+textarea {
+  min-height: 55px;
+  resize: vertical;
+}
+
+.manualSave {
+  width: 100%;
+  margin-top: 5px;
+}
+
+/* Pain flag */
+
+.painRow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 38px;
+  padding: 6px 8px;
+  border: 1px solid #e4dada;
+  border-radius: 9px;
+  background: #faf7f7;
+}
+
+.painRow input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
+/* =========================================================
+   BACK / NEXT
+   ========================================================= */
+
+.actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 7px;
+}
+
+.actions button {
+  flex: 1;
+}
+
+.actions button:disabled,
+.utilityRow button:disabled,
+.quickActions button:disabled {
+  opacity: 0.38;
+}
+
+/* =========================================================
+   UTILITIES
+   ========================================================= */
+
+.utilityRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.utilityRow button {
+  min-height: 36px;
+  background: transparent;
+  color: #66717e;
+}
+
+.statusNote {
+  margin-top: 5px;
+  text-align: center;
+  color: var(--accent);
+  font-size: 10px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+/* =========================================================
+   MODALS
+   ========================================================= */
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 12px;
+  background: rgba(20, 29, 39, 0.48);
+}
+
+.modal {
+  width: min(720px, 100%);
+  max-height: 84vh;
+  padding: 15px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: #ffffff;
+}
+
+.modal.small {
+  max-width: 460px;
+}
+
+.modalHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.modalHead button {
+  min-width: 39px;
+  min-height: 39px;
+  border: 0;
+  border-radius: 9px;
+  background: var(--panel);
+  color: var(--text);
+  font-size: 21px;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.modal form button {
+  width: 100%;
+  min-height: 42px;
+  margin-top: 7px;
+  border-radius: 10px;
+  font-weight: 800;
+}
+
+.reply {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background: var(--panel);
+  color: #465363;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+/* =========================================================
+   HISTORY
+   ========================================================= */
+
+.historyList {
+  display: grid;
+  gap: 5px;
+}
+
+.historyItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+}
+
+.historyItem strong {
+  display: block;
+  font-size: 12px;
+}
+
+.historyItem span {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.historyItem button {
+  min-height: 35px;
+  padding: 0 9px;
+  border: 1px solid #e1caca;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #8a4545;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   SMALL IPHONES
+   ========================================================= */
+
+@media (max-width: 390px) {
+  .app {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  h1 {
+    font-size: 21px;
+  }
+
+  .tabs {
+    gap: 1px;
+    padding: 2px;
+  }
+
+  .tabs button {
+    min-height: 31px;
+    font-size: 9px;
+  }
+
+  .exerciseImage {
+    height: 100px;
+  }
+
+  .figure {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .feel button {
+    font-size: 9px;
+  }
+}
+
+/* Wider screens */
+
+@media (min-width: 620px) {
+  .app {
+    padding-top: 14px;
+  }
+
+  .tabs button {
+    font-size: 11px;
+  }
+
+  .exerciseImage {
+    height: 150px;
+  }
+}
